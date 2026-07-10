@@ -507,3 +507,29 @@ h1 {
     font-size: .85rem;
   }
 }
+
+
+/* Tile sizing controls
+   Change --board-max-width to fine-tune the overall board size. */
+:root {
+  --board-max-width: 1040px;
+}
+
+.bingo-board {
+  width: 100%;
+  max-width: var(--board-max-width);
+  margin: 0 auto;
+}
+
+.tile-image-wrap {
+  aspect-ratio: 1.38 / 1;
+}
+
+.tile-title {
+  min-height: 54px;
+  padding: 8px 9px;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: center;
+  justify-content: center;
+}
