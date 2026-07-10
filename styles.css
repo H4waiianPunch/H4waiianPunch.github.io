@@ -953,6 +953,9 @@ body {
 }
 .event-details {
   font-family: Inter, Arial, sans-serif;
+  color: #d8d0ba;
+  font-size: clamp(.8rem, 1.5vw, 1rem);
   font-weight: 600;
-  letter-spacing: .03em;
+  letter-spacing: .08em;
+  text-transform: uppercase;
 }
