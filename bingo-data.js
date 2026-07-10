@@ -12,11 +12,11 @@ export const bingoData = {
       tiles: [
         {
           title: "God Wars Drop",
-          image: "images/tile-1.svg",
+          image: "https://i.redd.it/gt0fy0wr1jz91.png",
           description: "Earn an approved God Wars Dungeon unique for your team.",
           requirements: "Submit a screenshot showing the drop, player name, and game message.",
-          completed: false,
-          completedBy: ""
+          completed: true,
+          completedBy: "The Ryanster"
         },
         {
           title: "Barrows Unique",
