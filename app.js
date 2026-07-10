@@ -44,7 +44,6 @@ function fitTileTitle(element, text) {
 function render() {
   els.announcement.textContent = bingoData.announcement;
   renderBoards();
-  renderProgress();
   els.syncStatus.textContent = "Published from GitHub";
 }
 
@@ -82,14 +81,6 @@ function renderBoards() {
   }
 }
 
-function renderProgress() {
-  for (const teamKey of ["teamOne", "teamTwo"]) {
-    const tiles = bingoData.teams[teamKey].tiles;
-    const complete = tiles.filter(tile => tile.completed).length;
-    document.querySelector(`#progress-${teamKey}`).textContent =
-      `${complete} of ${tiles.length} tiles completed`;
-  }
-}
 
 function openTile(teamKey, index) {
   const tile = bingoData.teams[teamKey].tiles[index];
