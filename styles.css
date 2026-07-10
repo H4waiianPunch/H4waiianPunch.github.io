@@ -688,3 +688,121 @@ body {
 .legend-dot {
   display: none !important;
 }
+
+
+/* Version 5 compact event banner */
+.page-shell {
+  margin-bottom: 24px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(300px, .9fr) minmax(420px, 1.1fr);
+  align-items: center;
+  gap: 36px;
+  padding: 22px 0;
+  border-bottom: 1px solid #465574;
+}
+
+.hero-left,
+.hero-right {
+  display: flex;
+  min-width: 0;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero-left {
+  min-height: 150px;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #F9F1DB;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+}
+
+.hero-subtitle {
+  margin: 7px 0 0;
+  color: #d8d0ba;
+  font-size: clamp(.8rem, 1.5vw, 1rem);
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hero-right {
+  align-items: flex-start;
+  min-height: 150px;
+  padding: 16px 18px;
+  border: 1px solid #465574;
+  border-radius: 8px;
+  background: #313E59;
+}
+
+.event-details {
+  width: 100%;
+  margin: 0;
+}
+
+.event-details > div {
+  display: grid;
+  grid-template-columns: 145px minmax(0, 1fr);
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.event-details dt {
+  color: #F9F1DB;
+  font-weight: 700;
+}
+
+.event-details dd {
+  min-width: 0;
+  margin: 0;
+  color: #d8d0ba;
+  overflow-wrap: anywhere;
+}
+
+.discord-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  border: 1px solid #F9F1DB;
+  border-radius: 5px;
+  padding: 8px 13px;
+  color: #172136;
+  background: #F9F1DB;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.discord-button:hover {
+  background: #e8dfc5;
+}
+
+.board-panel {
+  margin-top: 16px;
+}
+
+.team-panel {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .hero-left,
+  .hero-right {
+    min-height: auto;
+  }
+
+  .event-details > div {
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+}

@@ -3,7 +3,10 @@ import { bingoData } from "./bingo-data.js";
 const state = {};
 
 const els = {
-  announcement: document.querySelector("#announcement"),
+  startDate: document.querySelector("#startDate"),
+  endDate: document.querySelector("#endDate"),
+  prize: document.querySelector("#prize"),
+  submissionRules: document.querySelector("#submissionRules"),
   syncStatus: document.querySelector("#syncStatus"),
   tileDialog: document.querySelector("#tileDialog"),
   dialogImage: document.querySelector("#dialogImage"),
@@ -42,7 +45,10 @@ function fitTileTitle(element, text) {
 }
 
 function render() {
-  els.announcement.textContent = bingoData.announcement;
+  els.startDate.textContent = bingoData.eventDetails.startDate;
+  els.endDate.textContent = bingoData.eventDetails.endDate;
+  els.prize.textContent = bingoData.eventDetails.prize;
+  els.submissionRules.textContent = bingoData.eventDetails.submissionRules;
   renderBoards();
   els.syncStatus.textContent = "Published from GitHub";
 }

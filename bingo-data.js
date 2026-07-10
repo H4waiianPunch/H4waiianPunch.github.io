@@ -1,7 +1,10 @@
 export const bingoData = {
-  announcement: `Welcome to the GodSlayersFC Bingo!
-
-Add event dates, submission rules, prize details, and important announcements here.`,
+  eventDetails: {
+    startDate: "August 1, 2026",
+    endDate: "August 31, 2026",
+    prize: "Enter prize information here",
+    submissionRules: "Enter submission rules here"
+  },
 
   teams: {
     teamOne: {

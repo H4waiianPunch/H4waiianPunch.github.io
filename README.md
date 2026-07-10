@@ -46,3 +46,19 @@ Commit changes through GitHub. Visitors do not receive editing controls.
 
 Both 5×5 boards are displayed side by side on wide screens. On smaller screens,
 they automatically stack vertically so the tiles remain readable.
+
+
+## Edit the event information
+
+Open `bingo-data.js` and edit:
+
+```js
+eventDetails: {
+  startDate: "August 1, 2026",
+  endDate: "August 31, 2026",
+  prize: "Enter prize information here",
+  submissionRules: "Enter submission rules here"
+}
+```
+
+The Discord button is configured in `index.html`.
