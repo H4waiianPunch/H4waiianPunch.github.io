@@ -12,8 +12,8 @@ Add event dates, submission rules, prize details, and important announcements he
           image: "images/tile-1.svg",
           description: "Earn an approved God Wars Dungeon unique for your team.",
           requirements: "Submit a screenshot showing the drop, player name, and game message.",
-          completed: false,
-          completedBy: ""
+          completed: true,
+          completedBy: "The Ryanster but I have a really long name to see if this breaks"
         },
         {
           title: "Barrows Unique",
