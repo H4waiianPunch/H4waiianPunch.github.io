@@ -33,7 +33,7 @@
       <div class="panel-heading">
         <div>
           <h2 id="boardHeading">Team Progress</h2>
-          <p id="progressSummary" class="muted-text"></p>
+          <p class="muted-text">Both team boards are shown together.</p>
         </div>
         <div class="legend">
           <span><span class="legend-dot"></span> Incomplete</span>
@@ -41,23 +41,23 @@
         </div>
       </div>
 
-      <div class="team-tabs" role="tablist" aria-label="Bingo teams">
-        <button class="team-tab active" id="tab-team-one" role="tab"
-          aria-selected="true" aria-controls="panel-team-one" data-team="teamOne">
-          Team Saradomin
-        </button>
-        <button class="team-tab" id="tab-team-two" role="tab"
-          aria-selected="false" aria-controls="panel-team-two" data-team="teamTwo">
-          Team Zamorak
-        </button>
-      </div>
+      <div class="side-by-side-boards">
+        <section class="team-column" aria-labelledby="teamOneHeading">
+          <div class="team-column-heading">
+            <h3 id="teamOneHeading">Team Saradomin</h3>
+            <p id="progress-teamOne" class="muted-text"></p>
+          </div>
+          <div id="board-teamOne" class="bingo-board compact-board" aria-label="Team Saradomin bingo board"></div>
+        </section>
 
-      <div id="panel-team-one" class="team-panel" role="tabpanel" aria-labelledby="tab-team-one">
-        <div id="board-teamOne" class="bingo-board" aria-label="Team Saradomin bingo board"></div>
+        <section class="team-column" aria-labelledby="teamTwoHeading">
+          <div class="team-column-heading">
+            <h3 id="teamTwoHeading">Team Zamorak</h3>
+            <p id="progress-teamTwo" class="muted-text"></p>
+          </div>
+          <div id="board-teamTwo" class="bingo-board compact-board" aria-label="Team Zamorak bingo board"></div>
+        </section>
       </div>
-
-      <div id="panel-team-two" class="team-panel hidden" role="tabpanel" aria-labelledby="tab-team-two">
-        <div id="board-teamTwo" class="bingo-board" aria-label="Team Zamorak bingo board"></div>
       </div>
     </section>
   </main>
@@ -73,6 +73,10 @@
         <div id="dialogRequirementsWrap">
           <h3>Completion requirements</h3>
           <p id="dialogRequirements"></p>
+        </div>
+        <div id="dialogCompletedByWrap" class="hidden">
+          <h3>Completed by</h3>
+          <p id="dialogCompletedBy"></p>
         </div>
         
       </div>

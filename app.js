@@ -1,14 +1,9 @@
 import { bingoData } from "./bingo-data.js";
 
-const state = {
-  activeTeam: "teamOne",
-  selectedTeam: null,
-  selectedTileIndex: null
-};
+const state = {};
 
 const els = {
   announcement: document.querySelector("#announcement"),
-  progressSummary: document.querySelector("#progressSummary"),
   syncStatus: document.querySelector("#syncStatus"),
   tileDialog: document.querySelector("#tileDialog"),
   dialogImage: document.querySelector("#dialogImage"),
@@ -17,6 +12,8 @@ const els = {
   dialogDescription: document.querySelector("#dialogDescription"),
   dialogRequirements: document.querySelector("#dialogRequirements"),
   dialogRequirementsWrap: document.querySelector("#dialogRequirementsWrap"),
+  dialogCompletedByWrap: document.querySelector("#dialogCompletedByWrap"),
+  dialogCompletedBy: document.querySelector("#dialogCompletedBy"),
   tileTemplate: document.querySelector("#tileTemplate")
 };
 
@@ -24,8 +21,24 @@ function teamName(teamKey) {
   return bingoData.teams[teamKey].name;
 }
 
-function activeTiles() {
-  return bingoData.teams[state.activeTeam].tiles;
+function displayTitle(tile) {
+  if (tile.completed && tile.completedBy?.trim()) {
+    return `${tile.title} - ${tile.completedBy.trim()}`;
+  }
+  return tile.title;
+}
+
+function fitTileTitle(element, text) {
+  const length = text.length;
+  let size = 0.88;
+
+  if (length > 55) size = 0.58;
+  else if (length > 45) size = 0.64;
+  else if (length > 35) size = 0.70;
+  else if (length > 27) size = 0.76;
+  else if (length > 20) size = 0.82;
+
+  element.style.fontSize = `${size}rem`;
 }
 
 function render() {
@@ -46,24 +59,22 @@ function renderBoards() {
       const image = fragment.querySelector(".tile-image");
       const title = fragment.querySelector(".tile-title");
       const number = fragment.querySelector(".tile-number");
+      const shownTitle = displayTitle(tile);
 
       button.classList.toggle("completed", Boolean(tile.completed));
       button.setAttribute(
         "aria-label",
-        `${tile.title}. ${tile.completed ? "Completed" : "Incomplete"}. Open details.`
+        `${shownTitle}. ${tile.completed ? "Completed" : "Incomplete"}. Open details.`
       );
 
       image.src = tile.image || "images/tile-placeholder.svg";
       image.alt = "";
-      image.addEventListener(
-        "error",
-        () => {
-          image.src = "images/tile-placeholder.svg";
-        },
-        { once: true }
-      );
+      image.addEventListener("error", () => {
+        image.src = "images/tile-placeholder.svg";
+      }, { once: true });
 
-      title.textContent = tile.title;
+      title.textContent = shownTitle;
+      fitTileTitle(title, shownTitle);
       number.textContent = String(index + 1);
       button.addEventListener("click", () => openTile(teamKey, index));
       board.appendChild(fragment);
@@ -72,30 +83,16 @@ function renderBoards() {
 }
 
 function renderProgress() {
-  const tiles = activeTiles();
-  const complete = tiles.filter(tile => tile.completed).length;
-  els.progressSummary.textContent =
-    `${teamName(state.activeTeam)} has completed ${complete} of ${tiles.length} tiles.`;
-}
-
-function switchTeam(teamKey) {
-  state.activeTeam = teamKey;
-
-  document.querySelectorAll(".team-tab").forEach(tab => {
-    const active = tab.dataset.team === teamKey;
-    tab.classList.toggle("active", active);
-    tab.setAttribute("aria-selected", String(active));
-  });
-
-  document.querySelector("#panel-team-one").classList.toggle("hidden", teamKey !== "teamOne");
-  document.querySelector("#panel-team-two").classList.toggle("hidden", teamKey !== "teamTwo");
-  renderProgress();
+  for (const teamKey of ["teamOne", "teamTwo"]) {
+    const tiles = bingoData.teams[teamKey].tiles;
+    const complete = tiles.filter(tile => tile.completed).length;
+    document.querySelector(`#progress-${teamKey}`).textContent =
+      `${complete} of ${tiles.length} tiles completed`;
+  }
 }
 
 function openTile(teamKey, index) {
   const tile = bingoData.teams[teamKey].tiles[index];
-  state.selectedTeam = teamKey;
-  state.selectedTileIndex = index;
 
   els.dialogImage.src = tile.image || "images/tile-placeholder.svg";
   els.dialogImage.alt = tile.title;
@@ -106,11 +103,12 @@ function openTile(teamKey, index) {
   els.dialogStatus.textContent = tile.completed ? "Completed" : "Incomplete";
   els.dialogStatus.classList.toggle("complete", tile.completed);
 
+  const completedBy = tile.completedBy?.trim();
+  els.dialogCompletedByWrap.classList.toggle("hidden", !(tile.completed && completedBy));
+  els.dialogCompletedBy.textContent = completedBy || "";
+
   els.tileDialog.showModal();
 }
 
-document.querySelectorAll(".team-tab").forEach(tab => {
-  tab.addEventListener("click", () => switchTeam(tab.dataset.team));
-});
 
 render();
