@@ -939,3 +939,15 @@ body {
     grid-template-columns: 125px minmax(0, 1fr);
   }
 }
+/* Show the complete image in the expanded tile */
+.dialog-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 55vh;
+  margin: 0 auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #313E59;
+}
