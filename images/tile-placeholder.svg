@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+<rect width="500" height="400" fill="#303134"/>
+<path d="M160 255l62-65 48 45 40-38 50 58z" fill="#5f6368"/>
+<circle cx="310" cy="135" r="30" fill="#5f6368"/>
+<text x="250" y="325" text-anchor="middle" fill="#bdc1c6" font-size="24" font-family="Arial">ADD TILE IMAGE</text>
+</svg>
