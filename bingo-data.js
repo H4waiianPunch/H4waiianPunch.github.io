@@ -12,7 +12,7 @@ Add event dates, submission rules, prize details, and important announcements he
           image: "images/tile-1.svg",
           description: "Earn an approved God Wars Dungeon unique for your team.",
           requirements: "Submit a screenshot showing the drop, player name, and game message.",
-          completed: false
+          completed: true
         },
         {
           title: "Barrows Unique",
@@ -33,14 +33,14 @@ Add event dates, submission rules, prize details, and important announcements he
           image: "images/tile-4.svg",
           description: "Obtain an approved unique from a Slayer boss.",
           requirements: "The drop must be earned during the bingo event.",
-          completed: false
+          completed: true
         },
         {
           title: "Raid Purple",
           image: "images/tile-5.svg",
           description: "Receive a purple chest from an approved raid.",
           requirements: "Submit the raid completion and reward screenshot.",
-          completed: false
+          completed: true
         }
       ]
     },
