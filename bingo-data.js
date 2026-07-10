@@ -2,8 +2,8 @@ export const bingoData = {
   eventDetails: {
     startDate: "August 1, 2026",
     endDate: "August 31, 2026",
-    prize: "Winning team splits 100M GP",
-    submissionRules: "Submit in #Channel. Must have Event Code + RSN visible"
+    prize: "Enter prize information here",
+    submissionRules: "Enter submission rules here"
   },
 
   teams: {

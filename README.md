@@ -42,10 +42,23 @@ There is no loop that generates extra tiles.
 
 Commit changes through GitHub. Visitors do not receive editing controls.
 
-## Layout
+## Adjust the tile size
 
-Both 5×5 boards are displayed side by side on wide screens. On smaller screens,
-they automatically stack vertically so the tiles remain readable.
+Open `styles.css` and find:
+
+```css
+:root {
+  --board-max-width: 1040px;
+}
+```
+
+Lower the number to make the entire 5×5 board smaller:
+
+```css
+--board-max-width: 900px;
+```
+
+Raise it to make the board larger.
 
 
 ## Edit the event information

@@ -509,67 +509,29 @@ h1 {
 }
 
 
-.side-by-side-boards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  padding: 18px;
-  border-top: 1px solid var(--border);
+/* Tile sizing controls
+   Change --board-max-width to fine-tune the overall board size. */
+:root {
+  --board-max-width: 1040px;
 }
 
-.team-column {
-  min-width: 0;
-  padding: 14px;
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  background: var(--surface-alt);
+.bingo-board {
+  width: 100%;
+  max-width: var(--board-max-width);
+  margin: 0 auto;
 }
 
-.team-column-heading {
-  margin-bottom: 12px;
+.tile-image-wrap {
+  aspect-ratio: 1.38 / 1;
 }
 
-.team-column-heading h3 {
-  margin: 0 0 4px;
-}
-
-.compact-board {
-  gap: 5px;
-}
-
-.compact-board .tile-image-wrap {
-  aspect-ratio: 1 / 0.82;
-}
-
-.compact-board .tile-title {
-  min-height: 43px;
-  padding: 5px;
+.tile-title {
+  min-height: 54px;
+  padding: 8px 9px;
   overflow: hidden;
   overflow-wrap: anywhere;
-  justify-content: center;
   text-align: center;
-}
-
-.compact-board .tile-number {
-  top: 3px;
-  left: 3px;
-  min-width: 20px;
-  height: 20px;
-  font-size: .58rem;
-}
-
-.compact-board .completion-check {
-  right: 4px;
-  bottom: 4px;
-  width: 25px;
-  height: 25px;
-  font-size: .85rem;
-}
-
-@media (max-width: 980px) {
-  .side-by-side-boards {
-    grid-template-columns: 1fr;
-  }
+  justify-content: center;
 }
 
 
@@ -804,5 +766,67 @@ body {
 
   .event-details > div {
     grid-template-columns: 125px minmax(0, 1fr);
+  }
+}
+
+
+/* Version 6: unboxed, right-aligned event details */
+.hero {
+  grid-template-columns: minmax(300px, 1fr) minmax(420px, 1fr);
+}
+
+.hero-right {
+  width: min(100%, 620px);
+  min-height: 150px;
+  justify-self: end;
+  align-items: flex-end;
+  padding: 8px 0 8px 28px;
+  border: 0;
+  border-left: 3px solid #F9F1DB;
+  border-radius: 0;
+  background: transparent;
+  text-align: right;
+}
+
+.event-details {
+  width: 100%;
+}
+
+.event-details > div {
+  grid-template-columns: 150px minmax(0, 1fr);
+  justify-content: end;
+}
+
+.event-details dt,
+.event-details dd {
+  text-align: right;
+}
+
+.discord-button {
+  align-self: flex-end;
+}
+
+@media (max-width: 850px) {
+  .hero-right {
+    width: 100%;
+    justify-self: stretch;
+    align-items: stretch;
+    padding: 14px 0 0;
+    border-left: 0;
+    border-top: 3px solid #F9F1DB;
+    text-align: left;
+  }
+
+  .event-details > div {
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+
+  .event-details dt,
+  .event-details dd {
+    text-align: left;
+  }
+
+  .discord-button {
+    align-self: flex-start;
   }
 }

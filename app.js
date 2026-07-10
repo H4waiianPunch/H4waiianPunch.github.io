@@ -1,6 +1,8 @@
 import { bingoData } from "./bingo-data.js";
 
-const state = {};
+const state = {
+  activeTeam: "teamOne"
+};
 
 const els = {
   startDate: document.querySelector("#startDate"),
@@ -88,6 +90,19 @@ function renderBoards() {
 }
 
 
+function switchTeam(teamKey) {
+  state.activeTeam = teamKey;
+
+  document.querySelectorAll(".team-tab").forEach(tab => {
+    const active = tab.dataset.team === teamKey;
+    tab.classList.toggle("active", active);
+    tab.setAttribute("aria-selected", String(active));
+  });
+
+  document.querySelector("#panel-team-one").classList.toggle("hidden", teamKey !== "teamOne");
+  document.querySelector("#panel-team-two").classList.toggle("hidden", teamKey !== "teamTwo");
+}
+
 function openTile(teamKey, index) {
   const tile = bingoData.teams[teamKey].tiles[index];
 
@@ -107,5 +122,8 @@ function openTile(teamKey, index) {
   els.tileDialog.showModal();
 }
 
+document.querySelectorAll(".team-tab").forEach(tab => {
+  tab.addEventListener("click", () => switchTeam(tab.dataset.team));
+});
 
 render();
