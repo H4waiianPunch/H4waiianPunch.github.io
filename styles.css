@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700&display=swap");
+
 :root {
-  --page: #f4f5f7;
-  --surface: #ffffff;
-  --surface-alt: #f8f9fa;
-  --text: #E9E9E9;
-  --muted: #5f6368;
-  --border: #dfe1e5;
-  --header: #202124;
-  --header-soft: #303134;
-  --accent: #00bfa5;
-  --accent-dark: #008f7a;
-  --complete: #2e7d32;
-  --complete-bg: #513535;
-  --danger: #b3261e;
+  --page: #172136;
+  --surface: #313E59;
+  --surface-alt: #263149;
+  --text: #F9F1DB;
+  --muted: #d8d0ba;
+  --border: #465574;
+  --header: #172136;
+  --header-soft: #313E59;
+  --accent: #F9F1DB;
+  --accent-dark: #d9cfb1;
+  --complete: #F9F1DB;
+  --complete-bg: #313E59;
+  --danger: #ffb4ab;
   --shadow: 0 8px 24px rgba(32, 33, 36, .10);
   --radius: 8px;
 }
@@ -653,4 +654,37 @@ body {
   color: #F9F1DB;
   background: #313E59;
   border-color: #72809f;
+}
+
+
+/* Version 4 banner and legend cleanup */
+.site-header {
+  background: #B9AA9C;
+  color: #080F22;
+}
+
+.site-header .brand,
+.site-header .sync-status,
+.site-header .icon-button {
+  color: #080F22;
+}
+
+.site-header .brand-mark {
+  color: #B9AA9C;
+  background: #080F22;
+}
+
+.site-header .icon-button {
+  border-color: #080F22;
+  background: transparent;
+}
+
+.site-header .icon-button:hover {
+  color: #B9AA9C;
+  background: #080F22;
+}
+
+.legend,
+.legend-dot {
+  display: none !important;
 }
