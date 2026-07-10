@@ -951,3 +951,8 @@ body {
   object-fit: contain;
   background: #313E59;
 }
+.event-details {
+  font-family: Inter, Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
