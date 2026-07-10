@@ -1,4 +1,21 @@
+/*
+  GodSlayersFC Bingo configuration
+
+  This is the main file you edit when updating the live event.
+
+  Common changes:
+  - Change event dates, prize, or submission rules in eventDetails.
+  - Change a tile's title, image, description, or requirements.
+  - Set completed to true when a tile is finished.
+  - Enter the player's RuneScape name in completedBy.
+
+  Because this project uses GitHub Pages only, changes become public after
+  you commit this file to the repository.
+*/
+
+// Export the configuration so app.js can read it.
 export const bingoData = {
+  // Information displayed in the event header.
   eventDetails: {
     startDate: "August 1, 2026",
     endDate: "August 31, 2026",
@@ -6,17 +23,29 @@ export const bingoData = {
     submissionRules: "Enter submission rules here"
   },
 
+  // Each team has a display name and exactly 25 editable tiles.
   teams: {
+    // ---------- Team One ----------
     teamOne: {
       name: "Team Saradomin",
+      // Every object below represents one visible bingo tile.
       tiles: [
+        /*
+          Tile field guide:
+          title        Text shown on the board.
+          image        Local path or direct HTTPS image URL.
+          description  Main text shown in the expanded tile.
+          requirements Rules shown below the description.
+          completed    true = completed, false = incomplete.
+          completedBy  RuneScape name shown after the title when completed.
+        */
         {
           title: "God Wars Drop",
-          image: "https://i.redd.it/gt0fy0wr1jz91.png",
+          image: "images/tile-1.svg",
           description: "Earn an approved God Wars Dungeon unique for your team.",
           requirements: "Submit a screenshot showing the drop, player name, and game message.",
-          completed: true,
-          completedBy: "The Ryanster"
+          completed: false,
+          completedBy: ""
         },
         {
           title: "Barrows Unique",
@@ -213,9 +242,20 @@ export const bingoData = {
       ]
     },
 
+    // ---------- Team Two ----------
     teamTwo: {
       name: "Team Zamorak",
+      // Every object below represents one visible bingo tile.
       tiles: [
+        /*
+          Tile field guide:
+          title        Text shown on the board.
+          image        Local path or direct HTTPS image URL.
+          description  Main text shown in the expanded tile.
+          requirements Rules shown below the description.
+          completed    true = completed, false = incomplete.
+          completedBy  RuneScape name shown after the title when completed.
+        */
         {
           title: "God Wars Drop",
           image: "images/tile-1.svg",

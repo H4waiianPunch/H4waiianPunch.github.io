@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Sticky top navigation/banner -->
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#" aria-label="GodSlayersFC Bingo home">
@@ -21,14 +22,19 @@
     </div>
   </header>
 
+  <!-- Main page content -->
   <main class="page-shell">
+    <!-- Event title and configurable event information -->
     <section class="hero">
+      <!-- Left side: event name and subtitle -->
       <div class="hero-left">
         <h1>GodSlayersFC Bingo</h1>
         <p class="hero-subtitle">Old School RuneScape Clan Event</p>
       </div>
 
+      <!-- Right side: values loaded from bingo-data.js -->
       <div class="hero-right">
+        <!-- Definition list keeps event labels aligned with their values -->
         <dl class="event-details">
           <div>
             <dt>Start Date:</dt>
@@ -47,19 +53,15 @@
             <dd id="submissionRules"></dd>
           </div>
         </dl>
-
-        <a class="discord-button"
-           href="https://discord.gg/KuyFX5y8vR"
-           target="_blank"
-           rel="noopener noreferrer">
-          Return to Discord
-        </a>
       </div>
     </section>
 
+    <!-- Bingo board area -->
     <section class="board-panel" aria-labelledby="boardHeading">
 
+      <!-- Both team boards displayed at the same time -->
       <div class="side-by-side-boards">
+        <!-- First team board -->
         <section class="team-column" aria-labelledby="teamOneHeading">
           <div class="team-column-heading">
             <h3 id="teamOneHeading">Team Saradomin</h3>
@@ -67,6 +69,7 @@
           <div id="board-teamOne" class="bingo-board compact-board" aria-label="Team Saradomin bingo board"></div>
         </section>
 
+        <!-- Second team board -->
         <section class="team-column" aria-labelledby="teamTwoHeading">
           <div class="team-column-heading">
             <h3 id="teamTwoHeading">Team Zamorak</h3>
@@ -78,10 +81,13 @@
     </section>
   </main>
 
+  <!-- Expanded tile details modal -->
   <dialog id="tileDialog" class="dialog">
     <form method="dialog" class="dialog-card">
       <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <!-- Large image shown in the expanded tile -->
       <img id="dialogImage" class="dialog-image" alt="">
+      <!-- Expanded tile text and completion information -->
       <div class="dialog-content">
         <p id="dialogStatus" class="status-pill"></p>
         <h2 id="dialogTitle"></h2>
@@ -99,6 +105,7 @@
     </form>
   </dialog>
 
+  <!-- Reusable HTML template cloned once for every bingo tile -->
   <template id="tileTemplate">
     <button class="bingo-tile" type="button">
       <span class="tile-image-wrap">
@@ -110,6 +117,7 @@
     </button>
   </template>
 
+  <!-- Main JavaScript module -->
   <script type="module" src="app.js"></script>
 </body>
 </html>

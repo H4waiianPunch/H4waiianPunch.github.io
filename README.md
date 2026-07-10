@@ -62,3 +62,30 @@ eventDetails: {
 ```
 
 The Discord button is configured in `index.html`.
+
+
+## Recommended image size
+
+Tile and expanded images now use a 4:3 aspect ratio.
+
+Recommended sizes:
+
+```text
+1200 × 900 pixels
+800 × 600 pixels
+```
+
+Use the same aspect ratio for every image. The site uses `object-fit: cover`, so
+images with a different ratio may be cropped around the edges.
+
+
+## Comments in the project
+
+The main project files now include section comments:
+
+- `index.html` explains the page structure.
+- `styles.css` is divided into labelled visual sections.
+- `app.js` documents each function, helper, and event listener.
+- `bingo-data.js` includes an editing guide and field descriptions.
+
+Comments do not change the behavior of the site.
