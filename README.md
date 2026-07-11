@@ -44,3 +44,13 @@ images/toa-logo.png
 
 - Team One tiles and KC progress run left-to-right.
 - Team Two tiles and KC progress run right-to-left.
+
+
+## Team 2 numbering
+
+Team 2 is visually reversed with CSS. The tile numbers remain assigned in normal
+data order (`1` through `7`), which makes the visible left-to-right order:
+
+```text
+7 6 5 4 3 2 1
+```
