@@ -15,7 +15,7 @@ export const raidConfig = {
       raids: {
       cox: {
         // Progress bar settings for this team and raid.
-        currentKC: 0,
+        currentKC: 99,
         goalKC: 100,
         tiles: [
           {
@@ -24,8 +24,8 @@ export const raidConfig = {
             image: "images/cox-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 2: edit every field below.
@@ -33,8 +33,8 @@ export const raidConfig = {
             image: "images/cox-2.svg",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 3: edit every field below.
@@ -42,8 +42,8 @@ export const raidConfig = {
             image: "images/cox-3.svg",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 4: edit every field below.
@@ -51,8 +51,8 @@ export const raidConfig = {
             image: "images/cox-4.svg",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 5: edit every field below.
@@ -60,8 +60,8 @@ export const raidConfig = {
             image: "images/cox-5.svg",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 6: edit every field below.
@@ -69,8 +69,8 @@ export const raidConfig = {
             image: "images/cox-6.svg",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 7: edit every field below.
@@ -78,14 +78,14 @@ export const raidConfig = {
             image: "images/cox-7.svg",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           }
         ]
       },
       tob: {
         // Progress bar settings for this team and raid.
-        currentKC: 0,
+        currentKC: 100,
         goalKC: 100,
         tiles: [
           {
@@ -94,8 +94,8 @@ export const raidConfig = {
             image: "images/tob-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "Daelgan"
           },
           {
             // Tile 2: edit every field below.
