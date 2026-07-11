@@ -21,7 +21,7 @@ export const raidConfig = {
           {
             // Tile 1: edit every field below.
             title: "CoX Task 1",
-            image: "https://oldschool.runescape.wiki/index.php?curid=112932",
+            image: "https://oldschool.runescape.wiki/w/Chambers_of_Xeric#/media/File:Chambers_of_Xeric_logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
             completed: true,
