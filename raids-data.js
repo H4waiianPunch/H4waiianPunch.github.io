@@ -15,17 +15,17 @@ export const raidConfig = {
       raids: {
       cox: {
         // Progress bar settings for this team and raid.
-        currentKC: 0,
+        currentKC: 69,
         goalKC: 100,
         tiles: [
           {
             // Tile 1: edit every field below.
             title: "CoX Task 1",
-            image: "images/cox-1.svg",
+            image: "https://oldschool.runescape.wiki/index.php?curid=112932",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: false,
-            completedBy: ""
+            completed: true,
+            completedBy: "The Ryanster"
           },
           {
             // Tile 2: edit every field below.
