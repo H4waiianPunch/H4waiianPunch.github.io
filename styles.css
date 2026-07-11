@@ -14,3 +14,257 @@
 .team-tabs{display:flex;margin-top:14px;overflow:hidden;border:1px solid var(--border);border-radius:7px}.team-tab{flex:1;border:0;padding:11px;background:#263149;color:var(--muted);font-weight:700}.team-tab.active{background:var(--surface);color:var(--text)}
 .raid-pair{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:9px}.team-raid-panel{min-width:0;border:2px solid;border-radius:7px;overflow:hidden}.team-raid-panel>h3{margin:0;padding:7px 9px 0;font-family:"Roboto Slab",serif}.team-raid-panel .raid-grid{gap:4px;padding:6px}.team-raid-panel .tile-title{min-height:38px;padding:4px}
 @media(max-width:1100px){.raid-pair{grid-template-columns:1fr}}@media(max-width:850px){.hero{grid-template-columns:1fr}.hero-right{justify-self:stretch;width:100%;padding:12px 0 0;border-left:0;border-top:3px solid var(--text)}.raid-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:580px){.raid-grid{grid-template-columns:repeat(2,1fr)}.event-details>div{grid-template-columns:120px 1fr}}
+
+
+/* =========================================================
+   VERSION 2 VISUAL UPGRADE
+   Uses layered gradients, raid logo watermarks, and more
+   pronounced raid-specific styling.
+   ========================================================= */
+
+/* Each raid section now has depth instead of one flat colour. */
+.raid-section {
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, .28),
+    inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+/* Subtle decorative glow behind each full raid section. */
+.raid-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .42;
+}
+
+/* Full-name raid headers now feel like banners. */
+.raid-heading {
+  position: relative;
+  overflow: hidden;
+  min-height: 72px;
+  padding: 12px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, .7);
+}
+
+.raid-heading::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 145px;
+  height: 64px;
+  transform: translateY(-50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: .32;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .55));
+}
+
+.raid-heading h2 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+}
+
+.raid-heading > span {
+  position: relative;
+  z-index: 1;
+  margin-right: 155px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Chambers of Xeric: lime stone, white, and blue-green shadows. */
+#cox-section::before,
+[id$="-cox-section"]::before {
+  background:
+    radial-gradient(circle at 15% 10%, rgba(221, 247, 178, .22), transparent 34%),
+    linear-gradient(135deg, rgba(184, 233, 134, .12), transparent 45%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.025) 0 2px, transparent 2px 12px);
+}
+
+#cox-section .raid-heading,
+[id$="-cox-section"] .raid-heading {
+  background:
+    linear-gradient(90deg, #102F2D 0%, #174A47 48%, #2E6F68 100%);
+}
+
+#cox-section .raid-heading::after,
+[id$="-cox-section"] .raid-heading::after {
+  background-image: url("images/cox-logo.png");
+}
+
+/* Theatre of Blood: blackened crimson and pale stone highlights. */
+#tob-section::before,
+[id$="-tob-section"]::before {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(241, 176, 176, .18), transparent 32%),
+    linear-gradient(135deg, rgba(183, 58, 58, .16), transparent 48%),
+    repeating-linear-gradient(-45deg, rgba(255,255,255,.02) 0 2px, transparent 2px 12px);
+}
+
+#tob-section .raid-heading,
+[id$="-tob-section"] .raid-heading {
+  background:
+    linear-gradient(90deg, #25080D 0%, #3F1018 48%, #7C1F2A 100%);
+}
+
+#tob-section .raid-heading::after,
+[id$="-tob-section"] .raid-heading::after {
+  background-image: url("images/tob-logo.png");
+}
+
+/* Tombs of Amascut: dark sandstone, gold, and ember-red accents. */
+#toa-section::before,
+[id$="-toa-section"]::before {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(245, 217, 138, .20), transparent 34%),
+    linear-gradient(135deg, rgba(212, 169, 65, .14), transparent 48%),
+    repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0 2px, transparent 2px 12px);
+}
+
+#toa-section .raid-heading,
+[id$="-toa-section"] .raid-heading {
+  background:
+    linear-gradient(90deg, #2B1C0C 0%, #4E3515 48%, #8C6427 100%);
+}
+
+#toa-section .raid-heading::after,
+[id$="-toa-section"] .raid-heading::after {
+  background-image: url("images/toa-logo.png");
+}
+
+/* Tiles now use layered surfaces and stronger hover feedback. */
+.raid-tile {
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.14));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 4px 10px rgba(0,0,0,.22);
+}
+
+.raid-tile:hover,
+.raid-tile:focus-visible {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 10px 22px rgba(0,0,0,.36);
+}
+
+.tile-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,.30), transparent 48%);
+}
+
+/* Progress bars gain a highlighted track and shine. */
+.progress-track {
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,.45),
+    0 1px 0 rgba(255,255,255,.05);
+}
+
+.progress-fill {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 14px currentColor;
+}
+
+.progress-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+}
+
+/* Expanded tile receives the same layered raid feel. */
+.dialog-card {
+  box-shadow: 0 24px 70px rgba(0,0,0,.48);
+}
+
+.dialog-content {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.025), transparent),
+    #313E59;
+}
+
+/* Keep raid logos fully visible when used as tile images. */
+.tile-image[src*="-logo.png"] {
+  object-fit: contain;
+  padding: 8px;
+  background: rgba(0,0,0,.30);
+}
+
+/* More room between paired teams in the side-by-side version. */
+.raid-pair {
+  gap: 28px;
+  padding: 14px;
+}
+
+/* Team panels receive a central visual separation. */
+.raid-pair .team-raid-panel + .team-raid-panel {
+  position: relative;
+}
+
+.raid-pair .team-raid-panel + .team-raid-panel::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 4%;
+  bottom: 4%;
+  width: 2px;
+  background: rgba(249, 241, 219, .35);
+}
+
+/* Team 2 reads from right to left visually. */
+.raid-pair .team-raid-panel:nth-child(2) .raid-grid {
+  direction: rtl;
+}
+
+.raid-pair .team-raid-panel:nth-child(2) .raid-tile {
+  direction: ltr;
+}
+
+/* Team 2 progress fills from the right side. */
+.raid-pair .team-raid-panel:nth-child(2) .progress-track {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.raid-pair .team-raid-panel:nth-child(2) .progress-labels {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1100px) {
+  .raid-pair {
+    gap: 18px;
+  }
+
+  .raid-pair .team-raid-panel + .team-raid-panel::before {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .raid-heading::after {
+    width: 100px;
+    right: 8px;
+  }
+
+  .raid-heading > span {
+    margin-right: 100px;
+  }
+}

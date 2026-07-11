@@ -15,17 +15,17 @@ export const raidConfig = {
       raids: {
       cox: {
         // Progress bar settings for this team and raid.
-        currentKC: 69,
+        currentKC: 0,
         goalKC: 100,
         tiles: [
           {
             // Tile 1: edit every field below.
             title: "CoX Task 1",
-            image: "https://oldschool.runescape.wiki/w/Chambers_of_Xeric#/media/File:Chambers_of_Xeric_logo.png",
+            image: "images/cox-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
-            completed: true,
-            completedBy: "The Ryanster"
+            completed: false,
+            completedBy: ""
           },
           {
             // Tile 2: edit every field below.
@@ -91,7 +91,7 @@ export const raidConfig = {
           {
             // Tile 1: edit every field below.
             title: "ToB Task 1",
-            image: "images/tob-1.svg",
+            image: "images/tob-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
             completed: false,
@@ -161,7 +161,7 @@ export const raidConfig = {
           {
             // Tile 1: edit every field below.
             title: "ToA Task 1",
-            image: "images/toa-1.svg",
+            image: "images/toa-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
             completed: false,
@@ -236,7 +236,7 @@ export const raidConfig = {
           {
             // Tile 1: edit every field below.
             title: "CoX Task 1",
-            image: "images/cox-1.svg",
+            image: "images/cox-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
             completed: false,
@@ -306,7 +306,7 @@ export const raidConfig = {
           {
             // Tile 1: edit every field below.
             title: "ToB Task 1",
-            image: "images/tob-1.svg",
+            image: "images/tob-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
             completed: false,
@@ -376,7 +376,7 @@ export const raidConfig = {
           {
             // Tile 1: edit every field below.
             title: "ToA Task 1",
-            image: "images/toa-1.svg",
+            image: "images/toa-logo.png",
             description: "Enter the tile description here.",
             requirements: "Enter the completion requirements here.",
             completed: false,
